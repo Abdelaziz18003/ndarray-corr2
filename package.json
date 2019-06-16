@@ -10,11 +10,21 @@
     "type": "git",
     "url": "git+https://github.com/Abdelaziz18003/ndarray-corr2.git"
   },
-  "keywords": ["ndarray", "correlation", "corr2", "matrix", "image processing"],
+  "keywords": [
+    "ndarray",
+    "correlation",
+    "corr2",
+    "matrix",
+    "image processing"
+  ],
   "author": "Abdelaziz Mokhnache",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Abdelaziz18003/ndarray-corr2/issues"
   },
-  "homepage": "https://github.com/Abdelaziz18003/ndarray-corr2#readme"
+  "homepage": "https://github.com/Abdelaziz18003/ndarray-corr2#readme",
+  "dependencies": {
+    "ndarray": "^1.0.18",
+    "ndarray-ops": "^1.2.2"
+  }
 }
