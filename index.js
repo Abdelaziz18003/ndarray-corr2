@@ -4,7 +4,12 @@ const ndarray = require('ndarray');
 const {sum, mul, subs} = require('ndarray-ops');
 
 function corr2 (ndarray1, ndarray2) {
-  if (ndarray1.dimension > 2 || ndarray2.dimension > 2) {
+  if (
+    !isNdarray(ndarray1) ||
+    !isNdarray(ndarray1) ||
+    ndarray1.dimension > 2 ||
+    ndarray2.dimension > 2
+  ) {
     throw new Error('Expected inputs to be two-dimensional ndarrays.');
   }
   const mean1 = sum(ndarray1) / ndarray1.size;
@@ -18,6 +23,15 @@ function corr2 (ndarray1, ndarray2) {
   subs(b, ndarray2, mean2);
 
   return sum(mul(c, a, b)) / Math.sqrt(sum(mul(c, a, a)) * sum(mul(c, b, b)));
+}
+
+function isNdarray (array) {
+  return (
+    array.hasOwnProperty('data') &&
+    array.hasOwnProperty('shape') &&
+    array.hasOwnProperty('stride') &&
+    array.hasOwnProperty('offset')
+  )
 }
 
 module.exports = corr2;
