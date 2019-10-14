@@ -12,6 +12,9 @@ function corr2 (ndarray1, ndarray2) {
   ) {
     throw new Error('Expected inputs to be two-dimensional ndarrays.');
   }
+  if (ndarray1.size !== ndarray2.size) {
+    throw new Error('Inputs must be ndarrays of the same size')
+  }
   const mean1 = sum(ndarray1) / ndarray1.size;
   const mean2 = sum(ndarray2) / ndarray2.size;
 
