@@ -4,17 +4,7 @@ const ndarray = require('ndarray');
 const {sum, mul, subs} = require('ndarray-ops');
 
 function corr2 (ndarray1, ndarray2) {
-  if (
-    !isNdarray(ndarray1) ||
-    !isNdarray(ndarray1) ||
-    ndarray1.dimension > 2 ||
-    ndarray2.dimension > 2
-  ) {
-    throw new Error('Expected inputs to be two-dimensional ndarrays.');
-  }
-  if (ndarray1.size !== ndarray2.size) {
-    throw new Error('Inputs must be ndarrays of the same size')
-  }
+  validateInputs(ndarray1, ndarray2);
   const mean1 = sum(ndarray1) / ndarray1.size;
   const mean2 = sum(ndarray2) / ndarray2.size;
 
@@ -35,6 +25,20 @@ function isNdarray (array) {
     array.hasOwnProperty('stride') &&
     array.hasOwnProperty('offset')
   )
+}
+
+function validateInputs (input1, input2) {
+  if (
+    !isNdarray(input1) ||
+    !isNdarray(input2) ||
+    input1.dimension > 2 ||
+    input2.dimension > 2
+  ) {
+    throw new Error('Expected inputs to be two-dimensional ndarrays.');
+  }
+  if (input1.size !== input2.size) {
+    throw new Error('Inputs must be ndarrays of the same size')
+  }
 }
 
 module.exports = corr2;
