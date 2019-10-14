@@ -4,7 +4,7 @@
   "description": "Calculate 2-D correlation coefficient between two ndarrays.",
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.js"
+    "test": "node test/index.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "ndarray-ops": "^1.2.2"
   },
   "devDependencies": {
+    "tap-spec": "^5.0.0",
     "tape": "^4.11.0"
   }
 }
