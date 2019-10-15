@@ -1,6 +1,6 @@
 {
   "name": "ndarray-corr2",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Calculate 2-D correlation coefficient between two ndarrays.",
   "main": "index.js",
   "scripts": {
